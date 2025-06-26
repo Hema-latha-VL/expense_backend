@@ -2,12 +2,12 @@ const express= require ('express');
 const mongoose = require('mongoose');
 const app=express();
 app.use(express.json());
-require('dotenv').config();
+
 
 const cors = require('cors')
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
-const PORT = process.env.PORT||5000;
+const PORT = 4000;
 const MONGO_URI = "mongodb+srv://hemalathavl:hemalatha@cluster0.farhyiq.mongodb.net/expensetracker?retryWrites=true&w=majority&appName=Cluster0"
 
 
@@ -71,6 +71,6 @@ app.delete('/expense/:userID',async(req,res)=>{
         res.status(500).json({error:'failed to delete'})
     }
 })
-app.listen(process.env.PORT,()=>{
-  console.log(`server is listening on port ${process.env.PORT}`)
+app.listen(PORT,()=>{
+  console.log(`server is listening on port ${PORT}`)
 })
