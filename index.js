@@ -58,7 +58,7 @@ app.get('/Expense',async(req,res)=>{
 
     }
 })
-app.delete('/expense/:userID',async(req,res)=>{
+app.delete('/Expense/:userID',async(req,res)=>{
     try {
         const{userID}=req.params;
         const deleteExpense =await Expense.findByIdAndDelete(userID);
